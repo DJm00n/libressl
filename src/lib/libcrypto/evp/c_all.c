@@ -223,6 +223,10 @@ OpenSSL_add_all_ciphers(void)
 	EVP_add_cipher(EVP_gost2814789_cfb64());
 	EVP_add_cipher(EVP_gost2814789_cnt());
 #endif
+
+#ifndef OPENSSL_NO_DSTU
+	EVP_add_cipher(EVP_dstu28147_cfb64());
+#endif
 }
 
 void

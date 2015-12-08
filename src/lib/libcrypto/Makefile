@@ -122,6 +122,9 @@ SRCS+= dsa_err.c dsa_ossl.c dsa_depr.c dsa_ameth.c dsa_pmeth.c dsa_prn.c
 SRCS+= dso_dlfcn.c dso_err.c dso_lib.c dso_null.c
 SRCS+= dso_openssl.c
 
+# dstu/
+SRCS+= dstu_params.c
+
 # ec/
 SRCS+= ec_lib.c ecp_smpl.c ecp_mont.c ecp_nist.c ec_cvt.c ec_mult.c
 SRCS+= ec_err.c ec_curve.c ec_check.c ec_print.c ec_asn1.c ec_key.c
@@ -163,6 +166,7 @@ SRCS+= e_aes_cbc_hmac_sha1.c e_rc4_hmac_md5.c
 SRCS+= e_chacha.c evp_aead.c e_chacha20poly1305.c
 SRCS+= e_gost2814789.c m_gost2814789.c m_gostr341194.c m_streebog.c
 SRCS+= m_md5_sha1.c
+SRCS+= e_dstu.c
 
 # gost/
 SRCS+= gost2814789.c gost89_keywrap.c gost89_params.c gost89imit_ameth.c

@@ -288,6 +288,7 @@ SRCS+= pcy_cache.c pcy_node.c pcy_data.c pcy_map.c pcy_tree.c pcy_lib.c
 	${LCRYPTO_SRC}/dh \
 	${LCRYPTO_SRC}/dsa \
 	${LCRYPTO_SRC}/dso \
+	${LCRYPTO_SRC}/dstu \
 	${LCRYPTO_SRC}/ec \
 	${LCRYPTO_SRC}/ecdh \
 	${LCRYPTO_SRC}/ecdsa \

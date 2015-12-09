@@ -15,6 +15,7 @@ SUBDIR= \
 	des \
 	dh \
 	dsa \
+	dstu \
 	ec \
 	ecdh \
 	ecdsa \

@@ -166,7 +166,7 @@ SRCS+= e_aes_cbc_hmac_sha1.c e_rc4_hmac_md5.c
 SRCS+= e_chacha.c evp_aead.c e_chacha20poly1305.c
 SRCS+= e_gost2814789.c m_gost2814789.c m_gostr341194.c m_streebog.c
 SRCS+= m_md5_sha1.c
-SRCS+= e_dstu.c
+SRCS+= e_dstu.c m_dstu.c
 
 # gost/
 SRCS+= gost2814789.c gost89_keywrap.c gost89_params.c gost89imit_ameth.c

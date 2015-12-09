@@ -269,6 +269,9 @@ OpenSSL_add_all_digests(void)
 	EVP_add_digest(EVP_streebog256());
 	EVP_add_digest(EVP_streebog512());
 #endif
+#ifndef OPENSSL_NO_DSTU
+	EVP_add_digest(EVP_dstu34311());
+#endif
 #ifndef OPENSSL_NO_RIPEMD
 	EVP_add_digest(EVP_ripemd160());
 	EVP_add_digest_alias(SN_ripemd160, "ripemd");

@@ -687,6 +687,9 @@ const EVP_MD *EVP_gost2814789imit(void);
 const EVP_MD *EVP_streebog256(void);
 const EVP_MD *EVP_streebog512(void);
 #endif
+#ifndef OPENSSL_NO_DSTU
+const EVP_MD *EVP_dstu34311(void);
+#endif
 const EVP_CIPHER *EVP_enc_null(void);		/* does nothing :-) */
 #ifndef OPENSSL_NO_DES
 const EVP_CIPHER *EVP_des_ecb(void);

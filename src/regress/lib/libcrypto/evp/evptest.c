@@ -416,6 +416,12 @@ main(int argc, char **argv)
 				continue;
 			}
 #endif
+#ifdef OPENSSL_NO_DSTU
+			if (strstr(cipher, "dstu28147-cfb") == cipher) {
+				fprintf(stdout, "Cipher disabled, skipping %s\n", cipher);
+				continue;
+			}
+#endif
 			fprintf(stderr, "Can't find %s\n",cipher);
 			exit(3);
 		}

@@ -417,7 +417,8 @@ main(int argc, char **argv)
 			}
 #endif
 #ifdef OPENSSL_NO_DSTU
-			if (strstr(cipher, "dstu28147-cfb") == cipher) {
+			if (strstr(cipher, "dstu28147-cfb") == cipher ||
+				strstr(cipher, "dstu34311") == cipher) {
 				fprintf(stdout, "Cipher disabled, skipping %s\n", cipher);
 				continue;
 			}

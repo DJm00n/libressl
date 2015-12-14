@@ -82,6 +82,10 @@ extern const EVP_PKEY_METHOD rsa_pkey_meth, dh_pkey_meth, dsa_pkey_meth;
 extern const EVP_PKEY_METHOD ec_pkey_meth, hmac_pkey_meth, cmac_pkey_meth;
 extern const EVP_PKEY_METHOD gostimit_pkey_meth, gostr01_pkey_meth;
 
+#ifndef OPENSSL_NO_DSTU
+extern const EVP_PKEY_METHOD dstu_pkey_meth_le, dstu_pkey_meth_be;
+#endif
+
 static const EVP_PKEY_METHOD *standard_methods[] = {
 #ifndef OPENSSL_NO_RSA
 	&rsa_pkey_meth,
@@ -98,6 +102,10 @@ static const EVP_PKEY_METHOD *standard_methods[] = {
 #ifndef OPENSSL_NO_GOST
 	&gostr01_pkey_meth,
 	&gostimit_pkey_meth,
+#endif
+#ifndef OPENSSL_NO_DSTU
+	&dstu_pkey_meth_le,
+	&dstu_pkey_meth_be,
 #endif
 	&hmac_pkey_meth,
 	&cmac_pkey_meth,

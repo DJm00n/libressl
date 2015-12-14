@@ -123,7 +123,8 @@ SRCS+= dso_dlfcn.c dso_err.c dso_lib.c dso_null.c
 SRCS+= dso_openssl.c
 
 # dstu/
-SRCS+= dstu_params.c
+SRCS+= dstu_params.c dstu_err.c dstu_sign.c dstu_asn1.c dstu_compress.c
+SRCS+= dstu_key.c dstu_pmeth.c dstu_ameth.c
 
 # ec/
 SRCS+= ec_lib.c ecp_smpl.c ecp_mont.c ecp_nist.c ec_cvt.c ec_mult.c

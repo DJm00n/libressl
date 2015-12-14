@@ -12,7 +12,8 @@
 #include <openssl/gost.h>
 #include <openssl/objects.h>
 
-#include "../dstu/dstu.h"
+#include "../dstu/dstu_params.h"
+#include "../dstu/dstu_key.h"
 
 typedef GOSTR341194_CTX DSTU34311_CTX;
 
@@ -20,23 +21,25 @@ static int
 dstu34311_init(EVP_MD_CTX *ctx)
 {
 	DSTU34311_CTX *c = ctx->md_data;
+	EVP_PKEY *pkey;
+	DSTU_KEY *dstu_key;
 
 	memset(c, 0, sizeof(DSTU34311_CTX));
 
 	/* If we have pkey_ctx, it may contain custom sbox, so let's check it */
 
-	/*if (ctx->pctx) {
+	if (ctx->pctx) {
 		pkey = EVP_PKEY_CTX_get0_pkey(ctx->pctx);
 		if (pkey) {
 			dstu_key = EVP_PKEY_get0(pkey);
 			if (dstu_key) {
 				if (dstu_key->sbox) {
-					unpack_sbox(dstu_key->sbox, &sbox);
-					use_default_sbox = 0;
+					dstu_set_sbox(&(c->cipher), dstu_key->sbox);
+					return 1;
 				}
 			}
 		}
-	}*/
+	}
 
 	dstu_set_sbox(&(c->cipher), NULL);
 	return 1;

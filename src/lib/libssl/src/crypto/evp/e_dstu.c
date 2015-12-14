@@ -11,7 +11,7 @@
 #include <openssl/evp.h>
 #include <openssl/err.h>
 #include <openssl/gost.h>
-#include "../dstu/dstu.h"
+#include "../dstu/dstu_params.h"
 #include "evp_locl.h"
 
 /*
@@ -54,7 +54,7 @@ static int dstu_cipher_ctrl(EVP_CIPHER_CTX *ctx, int cmd, int p1, void *p2)
 		/* Default value to have any s-box set at all */
 		dstu_set_sbox(&(c->ks), NULL);
 		return 1;
-	case EVP_CTRL_GOST_SET_SBOX:
+	case DSTU_SET_CUSTOM_SBOX:
 		/* Unlike GOST, which accepts nid, we accept pointer to sbox, so p2 is used! */
 		dstu_set_sbox(&(c->ks), p2);
 		return 1;

@@ -158,6 +158,7 @@ static ERR_STRING_DATA ERR_str_libraries[] = {
 	{ERR_PACK(ERR_LIB_CMS,0,0),		"CMS routines"},
 	{ERR_PACK(ERR_LIB_HMAC,0,0),		"HMAC routines"},
 	{ERR_PACK(ERR_LIB_GOST,0,0),		"GOST routines"},
+	{ERR_PACK(ERR_LIB_DSTU,0,0),		"DSTU routines"},
 	{0, NULL},
 };
 

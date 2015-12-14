@@ -79,6 +79,10 @@ extern const EVP_PKEY_ASN1_METHOD gostimit_asn1_meth;
 extern const EVP_PKEY_ASN1_METHOD hmac_asn1_meth;
 extern const EVP_PKEY_ASN1_METHOD cmac_asn1_meth;
 
+#ifndef OPENSSL_NO_DSTU
+extern const EVP_PKEY_ASN1_METHOD dstu_asn1_meth_le, dstu_asn1_meth_be;
+#endif
+
 /* Keep this sorted in type order !! */
 static const EVP_PKEY_ASN1_METHOD *standard_methods[] = {
 #ifndef OPENSSL_NO_RSA
@@ -107,6 +111,10 @@ static const EVP_PKEY_ASN1_METHOD *standard_methods[] = {
 #ifndef OPENSSL_NO_GOST
 	&gostr01_asn1_meths[1],
 	&gostr01_asn1_meths[2],
+#endif
+#ifndef OPENSSL_NO_DSTU
+	&dstu_asn1_meth_le,
+	&dstu_asn1_meth_be,
 #endif
 };
 

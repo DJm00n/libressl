@@ -103,12 +103,12 @@ static const EVP_PKEY_METHOD *standard_methods[] = {
 	&gostr01_pkey_meth,
 	&gostimit_pkey_meth,
 #endif
+	&hmac_pkey_meth,
+	&cmac_pkey_meth,
 #ifndef OPENSSL_NO_DSTU
 	&dstu_pkey_meth_le,
 	&dstu_pkey_meth_be,
 #endif
-	&hmac_pkey_meth,
-	&cmac_pkey_meth,
 };
 
 static int pmeth_cmp_BSEARCH_CMP_FN(const void *, const void *);
